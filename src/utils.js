@@ -1,6 +1,6 @@
 import { types } from './actions/types';
 
-export var urlApi = 'http://localhost:3001';
+export var urlApi = 'https://tilt-back.herokuapp.com';
 
 export function setToken(token) {
 	if (!localStorage.getItem('token')) {
