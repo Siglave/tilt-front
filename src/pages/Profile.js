@@ -80,7 +80,7 @@ class Profile extends Component {
             this.props.setDiscussion({
                 _id: 'new',
                 messages: [],
-                users: [this.props.connectedUser._id, this.props.userProfile._id]
+                users: [{...this.props.connectedUser}, {...this.props.userProfile}]
             });
             //Create new discussion
             this.props.history.push('/discussions/new')

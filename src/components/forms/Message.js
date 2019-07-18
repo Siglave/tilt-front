@@ -36,7 +36,7 @@ class Message extends Component {
         
         if(this.props.discussion._id === 'new'){
 
-            var receiverId = users.find((el)=>{return el !== this.props.connectedUser._id});
+            var receiverId = users.find((el)=>{return el._id !== this.props.connectedUser._id});
             this.props.createDiscussion({ message: this.state.message, receiverId: receiverId })
             .then((resp) => {
                 this.setState({
