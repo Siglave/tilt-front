@@ -35,8 +35,16 @@ export default function (state = initialState, action) {
                 discussions: action.payload.discussions
             }
         case types.ADD_DISCUSSION:
+            var newDiscussion = {
+                ...action.payload.discussion,
+                users:[action.payload.discussion.users[0]._id, action.payload.discussion.users[1]._id]
+            }
             return{
                 ...state,
+                user:{
+                    ...state.user,
+                    discussions:[ ...state.user.discussions, newDiscussion]
+                },
                 discussions: [...state.discussions, action.payload.discussion],
                 discussion: action.payload.discussion
 

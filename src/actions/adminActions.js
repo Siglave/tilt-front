@@ -30,7 +30,12 @@ export function deletePost(postId) {
 				});
 			}, dispatch)
 			.then((response) => {
-				
+				dispatch({
+					type: types.REMOVE_POST,
+					payload: {
+						postId: postId
+					}
+				})
 			})
 	};
 }

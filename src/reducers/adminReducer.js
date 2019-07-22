@@ -16,6 +16,19 @@ export default function (state = initialState, action) {
                 ...state,
                 stats: action.payload.stats
             }
+        case types.REMOVE_POST:
+            var posts = [];
+            posts = state.stats.downvotePosts.filter((post)=>{
+                if(post._id !== action.payload.postId){
+                    return post;
+                }
+            })
+            return{
+                stats: {
+                    ...state.stats,
+                    downvotePosts: posts
+                }
+            }
         default:
             return state;
     }
